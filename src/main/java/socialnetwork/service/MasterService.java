@@ -318,5 +318,8 @@ public class MasterService {
 
     public void addRequestObserver(Observer<RequestChangeEvent> e){this.requestService.addObserver(e);}
 
+    public FriendRequest deleteRequest(FriendRequest request) {
+        return this.requestService.deleteRequest(request.getId());
+    }
 }
 

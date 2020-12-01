@@ -154,6 +154,5 @@ public class UserController{
         }).collect(Collectors.toList());
         modelUser.setAll(users);
     }
-
 }
 

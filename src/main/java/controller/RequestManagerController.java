@@ -43,6 +43,8 @@ public class RequestManagerController implements Observer<RequestChangeEvent> {
     ChoiceBox<String> statusChoiceBox;
     @FXML
     Button answerButton;
+    @FXML
+    Button withdrawButton;
 
     @FXML
     public void initialize(){
@@ -93,6 +95,19 @@ public class RequestManagerController implements Observer<RequestChangeEvent> {
                 MessageAlert.showMessage(null, Alert.AlertType.INFORMATION,"Reply", "Reply made!");
             else
                 MessageAlert.showErrorMessage(null, "Reply not made!");
+        }
+    }
+
+    public void handleWithdrawButton(ActionEvent actionEvent) {
+        FriendRequest request = tableViewSentRequests.getSelectionModel().getSelectedItem();
+        if(request==null || request.getStatus()!=Status.pending)
+            MessageAlert.showErrorMessage(null, "You have to select a pending request!");
+        else{
+            FriendRequest req = this.service.deleteRequest(request);
+            if(req == null)
+                MessageAlert.showMessage(null, Alert.AlertType.INFORMATION,"Withdraw", "Reply withdrew!");
+            else
+                MessageAlert.showErrorMessage(null, "Withdraw not made!");
         }
     }
 }

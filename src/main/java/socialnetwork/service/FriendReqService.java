@@ -47,7 +47,10 @@ public class FriendReqService implements Observable<RequestChangeEvent> {
 
 
     public FriendRequest deleteRequest(Long ID) {
-        return this.repo.delete(ID);
+        FriendRequest request =  this.repo.delete(ID);
+        if(request == null)
+            notifyObservers(new RequestChangeEvent(ChangeEventType.DELETE, request));
+        return request;
     }
 
     public FriendRequest findRequest(Long ID){

@@ -41,6 +41,7 @@
                <children>
                   <ChoiceBox fx:id="statusChoiceBox" layoutX="434.0" layoutY="26.0" prefHeight="26.0" prefWidth="130.0" />
                   <Button fx:id="answerButton" layoutX="349.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleAnswerButton" text="Answer" />
+                  <Button fx:id="withdrawButton" layoutX="111.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleWithdrawButton" text="Withdraw" />
                </children></AnchorPane>
         </items>
       </SplitPane>
