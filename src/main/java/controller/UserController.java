@@ -36,6 +36,16 @@ public class UserController{
     TableView<Utilizator> tableViewUsers;
     @FXML
     Button friendsButton;
+    @FXML
+    Button requestButton;
+    @FXML
+    TextField idTextField;
+    @FXML
+    TextField firstNameTextField;
+    @FXML
+    TextField lastNameTextField;
+    @FXML
+    Button searchButton;
 
 
     private void initModel(){
@@ -125,5 +135,25 @@ public class UserController{
         else
             MessageAlert.showErrorMessage(null, "You have to select an user!");
     }
+
+    public void handleSearchButton(ActionEvent actionEvent) {
+        String idText = idTextField.getText();
+        String firstText = firstNameTextField.getText();
+        String lastText = lastNameTextField.getText();
+        if(idText.equals("") && firstText.equals("") && lastText.equals("")) {
+            this.initModel();
+            return;
+        }
+        List<Utilizator> users = this.getUserList();
+        users = users.stream().filter(x->{
+            if(!idText.equals("") && !x.getId().toString().equals(idText))
+                return false;
+            if(!firstText.equals("") && !x.getFirstName().startsWith(firstText))
+                return false;
+            return lastText.equals("") || x.getLastName().startsWith(lastText);
+        }).collect(Collectors.toList());
+        modelUser.setAll(users);
+    }
+
 }
 
