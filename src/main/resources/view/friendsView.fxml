@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FriendsManagerController">
+   <children>
+      <SplitPane dividerPositions="0.7090301003344481" layoutX="148.0" layoutY="61.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="tableViewFriends" layoutX="73.0" layoutY="64.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnFriends" prefWidth="211.19997256994247" text="Friendships" />
+                      <TableColumn fx:id="tableColumnDate" prefWidth="210.40000915527344" text="Date" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Button fx:id="deleteFriendButton" layoutX="26.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleDeleteFriendButton" text="Delete a Friendship" />
+                  <Button fx:id="sendRequestButton" layoutX="28.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleSendRequestButton" prefHeight="26.0" prefWidth="118.0" text="Send request" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

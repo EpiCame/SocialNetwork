@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RequestManagerController">
+   <children>
+      <SplitPane dividerPositions="0.7989949748743719" layoutX="209.0" layoutY="67.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.4996646545942321" layoutX="199.0" layoutY="48.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="tableViewSentRequests" layoutX="48.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="tableColumnTo" prefWidth="85.19998770952225" text="To" />
+                                  <TableColumn fx:id="tableColumnToStatus" minWidth="4.199981689453125" prefWidth="102.39999389648438" text="Status" />
+                                    <TableColumn fx:id="tableColumnToDate" minWidth="0.0" prefWidth="106.40000915527344" text="Date" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <TableView fx:id="tableViewReceivedRequests" layoutX="48.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="tableColumnFrom" prefWidth="97.00000154972076" text="From" />
+                                  <TableColumn fx:id="tableColumnFromStatus" prefWidth="89.99999237060547" text="Status" />
+                                    <TableColumn fx:id="tableColumnFromDate" prefWidth="106.0" text="Date" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ChoiceBox fx:id="statusChoiceBox" layoutX="434.0" layoutY="26.0" prefHeight="26.0" prefWidth="130.0" />
+                  <Button fx:id="answerButton" layoutX="349.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleAnswerButton" text="Answer" />
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
