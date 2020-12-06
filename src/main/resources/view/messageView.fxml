@@ -7,6 +7,6 @@
    <children>
       <TextArea fx:id="messageTextArea" layoutX="19.0" layoutY="45.0" prefHeight="195.0" prefWidth="349.0" />
       <Button fx:id="sendButton" layoutX="172.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleSendButton" text="Send" />
-      <Label fx:id="toLabel" layoutX="26.0" layoutY="14.0" prefHeight="18.0" prefWidth="0.0" />
+      <Label fx:id="toLabel" layoutX="26.0" layoutY="14.0" prefHeight="18.0" prefWidth="328.0" />
    </children>
 </AnchorPane>

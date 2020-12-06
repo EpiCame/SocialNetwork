@@ -1,9 +1,11 @@
 package socialnetwork.service;
 
+import controller.ConversationController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import socialnetwork.domain.*;
 import utils.events.FriendshipChangeEvent;
+import utils.events.MessageChangeEvent;
 import utils.events.RequestChangeEvent;
 import utils.observer.Observable;
 import utils.observer.Observer;
@@ -320,6 +322,10 @@ public class MasterService {
 
     public FriendRequest deleteRequest(FriendRequest request) {
         return this.requestService.deleteRequest(request.getId());
+    }
+
+    public void addMessageObserver(Observer<MessageChangeEvent> e) {
+        this.messageService.addObserver(e);
     }
 }
 

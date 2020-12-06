@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="541.0" prefWidth="815.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConversationController">
+   <children>
+      <SplitPane dividerPositions="0.5015384615384615" layoutX="216.0" layoutY="84.0" prefHeight="160.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="310.0">
+               <children>
+                  <Label fx:id="firstUserLabel" layoutX="189.0" layoutY="14.0" text="Label" />
+                  <ListView fx:id="firstListView" layoutX="28.0" layoutY="54.0" prefHeight="464.0" prefWidth="354.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="302.0">
+               <children>
+                  <Label fx:id="secondUserLabel" layoutX="187.0" layoutY="14.0" text="Label" />
+                  <ListView fx:id="secondListView" layoutX="22.0" layoutY="52.0" prefHeight="464.0" prefWidth="354.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

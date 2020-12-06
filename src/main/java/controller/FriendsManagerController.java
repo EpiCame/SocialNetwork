@@ -19,6 +19,7 @@ import utils.observer.Observer;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -38,6 +39,10 @@ public class FriendsManagerController implements Observer<FriendshipChangeEvent>
     Button deleteFriendButton;
     @FXML
     Button sendRequestButton;
+    @FXML
+    Button sendMessageButton;
+    @FXML
+    Button conversationButton;
 
     private void initModel(){
         modelFriends.setAll(this.service.getFriendshipsOfUser(user));
@@ -126,6 +131,30 @@ public class FriendsManagerController implements Observer<FriendshipChangeEvent>
         }
     }
 
+    private void showConversation(Utilizator otherUser){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/view/conversationView.fxml"));
+
+            AnchorPane root = (AnchorPane) loader.load();
+
+
+            Stage senderStage = new Stage();
+            senderStage.setTitle("Conversation between " + this.user.getFirstName() + " and " + otherUser.getFirstName());
+            senderStage.initModality(Modality.WINDOW_MODAL);
+            Scene scene = new Scene(root);
+            senderStage.setScene(scene);
+
+            ConversationController conversationController = loader.getController();
+            conversationController.setService(service,this.user, otherUser, senderStage);
+
+            senderStage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void handleSendRequestButton(ActionEvent actionEvent) {
         showRequestSender(this.user);
     }
@@ -148,5 +177,17 @@ public class FriendsManagerController implements Observer<FriendshipChangeEvent>
     }
 
     public void handleConversationButton(ActionEvent actionEvent) {
+        ObservableList<Prietenie> tableFriends = this.tableViewFriends.getSelectionModel().getSelectedItems();
+        if(tableFriends != null && tableFriends.size()==1) {
+            Optional<Utilizator> otherUser = tableFriends.stream().map(x->{
+                if(!x.getId().getLeft().equals(this.user.getId()))
+                    return this.service.findUserById(x.getId().getLeft());
+                else
+                    return this.service.findUserById(x.getId().getRight());
+            }).findAny();
+            showConversation(otherUser.get());
+        }
+        else
+            MessageAlert.showErrorMessage(null, "You have to select a friendship!");
     }
 }
