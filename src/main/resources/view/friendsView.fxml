@@ -19,7 +19,9 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
                   <Button fx:id="deleteFriendButton" layoutX="26.0" layoutY="62.0" mnemonicParsing="false" onAction="#handleDeleteFriendButton" text="Delete a Friendship" />
-                  <Button fx:id="sendRequestButton" layoutX="28.0" layoutY="174.0" mnemonicParsing="false" onAction="#handleSendRequestButton" prefHeight="26.0" prefWidth="118.0" text="Send request" />
+                  <Button fx:id="sendRequestButton" layoutX="26.0" layoutY="147.0" mnemonicParsing="false" onAction="#handleSendRequestButton" prefHeight="26.0" prefWidth="118.0" text="Send request" />
+                  <Button fx:id="sendMessageButton" layoutX="35.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleSendMessageButton" text="Send a message" />
+                  <Button fx:id="conversationButton" layoutX="27.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleConversationButton" text="Open conversation" />
                </children></AnchorPane>
         </items>
       </SplitPane>

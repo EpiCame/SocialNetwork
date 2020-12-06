@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="315.0" prefWidth="388.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MessageController">
+   <children>
+      <TextArea fx:id="messageTextArea" layoutX="19.0" layoutY="45.0" prefHeight="195.0" prefWidth="349.0" />
+      <Button fx:id="sendButton" layoutX="172.0" layoutY="262.0" mnemonicParsing="false" onAction="#handleSendButton" text="Send" />
+      <Label fx:id="toLabel" layoutX="26.0" layoutY="14.0" prefHeight="18.0" prefWidth="0.0" />
+   </children>
+</AnchorPane>
