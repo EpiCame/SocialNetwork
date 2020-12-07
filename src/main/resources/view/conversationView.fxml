@@ -10,13 +10,15 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="310.0">
                <children>
                   <Label fx:id="firstUserLabel" layoutX="189.0" layoutY="14.0" text="Label" />
-                  <ListView fx:id="firstListView" layoutX="28.0" layoutY="54.0" prefHeight="464.0" prefWidth="354.0" />
+                  <ListView fx:id="firstListView" layoutX="28.0" layoutY="54.0" prefHeight="440.0" prefWidth="354.0" />
+                  <Button fx:id="firstReplyButton" layoutX="14.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleFirstReplyButton" text="Reply" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="302.0">
                <children>
                   <Label fx:id="secondUserLabel" layoutX="187.0" layoutY="14.0" text="Label" />
-                  <ListView fx:id="secondListView" layoutX="22.0" layoutY="52.0" prefHeight="464.0" prefWidth="354.0" />
+                  <ListView fx:id="secondListView" layoutX="22.0" layoutY="52.0" prefHeight="440.0" prefWidth="354.0" />
+                  <Button fx:id="secondReplyButton" layoutX="336.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleSecondReplyButton" text="Reply" />
                </children>
             </AnchorPane>
         </items>

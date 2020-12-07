@@ -49,6 +49,7 @@ public class MessageController {
         Long messageID = MessageService.getMaxID();
         List<Long> toList = this.users.stream().map(Entity::getId).collect(Collectors.toList());
         String message = messageTextArea.getText();
+        messageTextArea.setText("");
         Message msg = this.service.sendAMessage(messageID, this.senderUser.getId(), toList, message);
         if(msg == null)
             MessageAlert.showMessage(null , Alert.AlertType.INFORMATION, "Sent", "Message Sent!");

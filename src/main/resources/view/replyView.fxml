@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="278.0" prefWidth="283.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReplyController">
+   <children>
+      <TextArea fx:id="replyTextArea" layoutX="13.0" layoutY="11.0" prefHeight="206.0" prefWidth="256.0" />
+      <Button fx:id="sendReplyButton" layoutX="104.0" layoutY="230.0" mnemonicParsing="false" onAction="#handleSendReplyButton" text=" Send reply" />
+   </children>
+</AnchorPane>
